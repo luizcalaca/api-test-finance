@@ -9,3 +9,11 @@ test('Deve listar todos os usuários', async () => {
         expect(res.body[0]).toHaveProperty('name', 'John')
     })
 })
+
+test('Deve inserir o usuário com sucesso',  async () => {
+    await request(app).post('/users').send({name: 'Luiz', mail: 'luizcalaca@gmail.com'})
+    .then((res) => {
+        expect(res.status).toBe(201)
+        expect(res.body.name).toBe('Luiz')
+    })
+})
