@@ -1,0 +1,35 @@
+# docker-compose.yml
+version: "3" ## especifica a versão do docker-compose file
+services: ## Define um serviço
+  app: ## nome do serviço
+    build: . ## localização do dockerfile
+    command: npm start ## comando a executar
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://${DB_USER}:${DB_PASS}@postgres:5432/finance
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "3000:3000" ## redirecionamento de porta quando chegar alguma requisição na porta 3000 chama o container na porta 3000
+      - "9229:9229"
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    networks:
+      - app-connect
+
+  postgres:
+    image: postgres:11.2-alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    ports: 
+      - '5432:5432' 
+    networks:
+      - app-connect
+
+networks:
+  app-connect:
+      driver: bridge
