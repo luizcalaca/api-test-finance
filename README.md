@@ -39,7 +39,6 @@ Docker- docker-compose up
 ```
 
 > Note: `-d` is required after up for run on background.
-```
 
 ## Knex
 
@@ -57,7 +56,10 @@ Docker- docker-compose up
 
 test is the name into the knexfile.js
 
+## Jest
 
+test.skip (ignore it)
+test.only (executes just it on the file)
 
 ## License
 
