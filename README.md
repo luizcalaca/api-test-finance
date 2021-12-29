@@ -16,13 +16,19 @@ The main goal is showed a TDD development with some importants tools.
 
 ## Some importants advises
 
-Important to use a secure mode from Jest. It is into package.json scripts: `${"secure-mode": "jest --watchAll"`
+Important to use a secure mode from Jest. It is into package.json scripts: `"secure-mode": "jest --watchAll"`
 
 ```sh
 npm run secure-mode
 ```
 
 ## Installations and details
+
+Here is just some informations. To install all dependences is:
+
+```sh
+> `${npm install}`
+```
 
 ```sh
 npm i -S -E body-parser # get the data from send method and take into body
@@ -35,7 +41,7 @@ npm i -S -E consign # consign include all imported middlewares into app.js
 ## Docker
 
 ```sh
-Docker- docker-compose up
+docker-compose up
 ```
 
 > Note: `-d` is required after up for run on background.
@@ -59,7 +65,7 @@ test is the name into the knexfile.js
 
 ## Jest
 
-test.skip (ignore it)
+test.skip (ignores  it)
 test.only (executes just it on the file)
 
 
