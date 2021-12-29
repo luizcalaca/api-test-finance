@@ -1,9 +1,64 @@
 # api-test-finance
 
-Important to use a secure mode from Jest. It is into package.json scripts: "secure-mode": "jest --watchAll"
+[![N|Solid](https://res.cloudinary.com/practicaldev/image/fetch/s--S6Nn_hYs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3fnnfif593kiswfmwwen.jpg)](https://jestjs.io/pt-BR/)
 
-npm i -S -E body-parser (get the data from send method and take into body )
+The main goal is showed a TDD development with some importants tools.
 
-npm i -S -E consign (include all imported middlewares into app.js)
+## Features
 
-Docker- docker-compose up -d (run on background with -d)
+- TDD with Jest
+- NodeJS
+- Express
+- Knex
+- Docker
+- Linter
+- PostgreSQL
+
+## Some importants advises
+
+Important to use a secure mode from Jest. It is into package.json scripts: `${"secure-mode": "jest --watchAll"`
+
+```sh
+npm run secure-mode
+```
+
+## Installations and details
+
+```sh
+npm i -S -E body-parser # get the data from send method and take into body
+```
+
+```sh
+npm i -S -E consign # consign include all imported middlewares into app.js
+```
+
+## Docker
+
+```sh
+Docker- docker-compose up
+```
+
+## Knex
+
+```sh
+ node_modules/.bin/knex migrate:make create_users --env test
+```
+
+```sh
+ node_modules/.bin/knex migrate:latest --env test
+```
+
+```sh
+ node_modules/.bin/knex migrate:rollback --env test
+```
+
+test is the name into the knexfile.js
+
+> Note: `-d` is required after up for run on background.
+```
+
+## License
+
+MIT
+
+**Free Software, Yeah!**
