@@ -66,6 +66,7 @@ test is the name into the knexfile.js
 ## Jest
 
 test.skip (ignores  it)
+
 test.only (executes just it on the file)
 
 
