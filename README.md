@@ -57,6 +57,11 @@ Docker- docker-compose up
 test is the name into the knexfile.js
 
 
+## Jest
+
+test.skip (ignore it)
+test.only (executes just it on the file)
+
 
 ## License
 
