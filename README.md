@@ -39,7 +39,6 @@ Docker- docker-compose up
 ```
 
 > Note: `-d` is required after up for run on background.
-```
 
 ## Knex
 
