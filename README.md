@@ -38,6 +38,9 @@ npm i -S -E consign # consign include all imported middlewares into app.js
 Docker- docker-compose up
 ```
 
+> Note: `-d` is required after up for run on background.
+```
+
 ## Knex
 
 ```sh
@@ -54,8 +57,7 @@ Docker- docker-compose up
 
 test is the name into the knexfile.js
 
-> Note: `-d` is required after up for run on background.
-```
+
 
 ## License
 
