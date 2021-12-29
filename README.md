@@ -1,9 +1,33 @@
 # api-test-finance
 
-Important to use a secure mode from Jest. It is into package.json scripts: "secure-mode": "jest --watchAll"
+## Some importants advises
 
-npm i -S -E body-parser (get the data from send method and take into body )
+Important to use a secure mode from Jest. It is into package.json scripts: `${"secure-mode": "jest --watchAll"`
 
-npm i -S -E consign (include all imported middlewares into app.js)
+```sh
+npm run secure-mode
+```
 
-Docker- docker-compose up -d (run on background with -d)
+## Installations and details
+
+```sh
+npm i -S -E body-parser # get the data from send method and take into body
+```
+
+```sh
+npm i -S -E consign # consign include all imported middlewares into app.js
+```
+
+## Docker
+
+```sh
+Docker- docker-compose up
+
+> Note: `-d` is required after up for run on background.
+```
+
+## License
+
+MIT
+
+**Free Software, Yeah!**
