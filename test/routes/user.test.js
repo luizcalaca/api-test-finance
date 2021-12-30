@@ -19,16 +19,17 @@ test('Deve inserir o usuário com sucesso',  async () => {
     })
 })
 
-test('Não deve inserir o usuário sem nome',  async () => { 
-    const mail = `${Date.now()}@mail.com`    
-    await request(app).post('/users')
-        .send({mail: mail, passwd: '123456'})
+// use return to leave Jest controlling
+test('Não deve inserir o usuário sem nome', () => {    
+    return request(app).post('/users')
+        .send({mail: 'mail@mail.com', passwd: '123456'})
         .then((res) => {
             expect(res.status).toBe(400)
             expect(res.body.error).toBe('Nome é um atributo obrigatório')
     })
 })
 
+//use async await to handle as a promise
 test('Não deve inserir o usuário sem email',  async () => { 
     const mail = `${Date.now()}@mail.com`    
     await request(app).post('/users')
@@ -37,4 +38,15 @@ test('Não deve inserir o usuário sem email',  async () => {
             expect(res.status).toBe(400)
             expect(res.body.error).toBe('Email é um atributo obrigatório')
     })
+})
+
+//request using done to finish de case test
+test('Não deve inserir o usuário sem senha',  (done) => {   
+    request(app).post('/users')
+        .send({name: 'Luiz', mail: 'mail@mail.com'})
+        .then((res) => {
+            expect(res.status).toBe(400)
+            expect(res.body.error).toBe('Senha é um atributo obrigatório')
+            done()
+    }).catch(err => {done.fail(err)})
 })
