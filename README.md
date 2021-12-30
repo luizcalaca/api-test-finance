@@ -27,8 +27,10 @@ npm run secure-mode
 Here is just some informations. To install all dependences is:
 
 ```sh
-> `${npm install}`
+npm install
 ```
+
+Some informations:
 
 ```sh
 npm i -S -E body-parser # get the data from send method and take into body
