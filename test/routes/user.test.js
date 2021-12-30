@@ -18,3 +18,13 @@ test('Deve inserir o usuário com sucesso',  async () => {
             expect(res.body.name).toBe('Luiz')
     })
 })
+
+test('Não deve inserir o usuário sem nome',  async () => { 
+    const mail = `${Date.now()}@mail.com`    
+    await request(app).post('/users')
+        .send({mail: mail, passwd: '123456'})
+        .then((res) => {
+            expect(res.status).toBe(400)
+            expect(res.body.error).toBe('Nome é um atributo obrigatório')
+    })
+})
