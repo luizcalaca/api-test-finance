@@ -11,6 +11,7 @@ app.use(knexLogger(app.db))
 
 consign({ cwd: 'src', verbose: false}) //load all
     .include('./config/middlewares.js')
+    .then('./services')
     .then('./routes')
     .then('./config/routes.js')
     .into(app)
