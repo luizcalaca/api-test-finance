@@ -1,23 +1,23 @@
-const app = require('express')()
-const consign = require('consign')
-const knex = require('knex')
-const knexfile = require('../knexfile')
-const knexLogger = require('knex-logger')
+const app = require('express')();
+const consign = require('consign');
+const knex = require('knex');
+const knexfile = require('../knexfile');
+const knexLogger = require('knex-logger');
 
 
-app.db = knex(knexfile.test)
+app.db = knex(knexfile.test);
 
-app.use(knexLogger(app.db))
+app.use(knexLogger(app.db));
 
 consign({ cwd: 'src', verbose: false}) //load all
-    .include('./config/middlewares.js')
-    .then('./services')
-    .then('./routes')
-    .then('./config/routes.js')
-    .into(app)
+	.include('./config/middlewares.js')
+	.then('./services')
+	.then('./routes')
+	.then('./config/routes.js')
+	.into(app);
 
 app.get('/', (req, res)=> {
-    res.status(200).send()
-})
+	res.status(200).send();
+});
 
-module.exports = app
+module.exports = app;
