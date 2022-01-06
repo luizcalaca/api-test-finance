@@ -14,6 +14,12 @@ The main goal is showed a TDD development with some importants tools.
 - Linter
 - PostgreSQL
 
+## ESLint
+
+```sh
+./node_modules/.bin/eslint --init
+```
+
 ## Some importants advises
 
 Important to use a secure mode from Jest. It is into package.json scripts: `"secure-mode": "jest --watchAll"`
