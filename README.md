@@ -16,8 +16,16 @@ The main goal is showed a TDD development with some importants tools.
 
 ## ESLint
 
+Initial configuration (after install)
+
 ```sh
 ./node_modules/.bin/eslint --init
+```
+
+Fix all problems
+
+```sh
+./node_modules/.bin/eslint --fix .
 ```
 
 ## Some importants advises
